@@ -29,6 +29,10 @@
 
 
   <style>
+    .swiper-pagination {
+  display: none !important;
+}
+
 .scrollable-image-container {
   width: 100%;
   height: 100%;
@@ -99,23 +103,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+        
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -474,7 +462,7 @@
                   <i class="bi bi-zoom-in"></i>
                 </a>
             
-                <a href="portfolio-details.html" title="More Details" class="details-link">
+                <a href="http://www.tmi.tn/" title="More Details" class="details-link">
                   <i class="bi bi-link-45deg"></i>
                 </a>
               </div>
@@ -488,12 +476,14 @@
             </div>
 
 
+
+
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
               <!-- Image principale (non scrollable) -->
               <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="App 1">
               
               <div class="portfolio-info">
-                <h4>TMI</h4>
+                <h4>ATSC</h4>
                 <p>Site d'une industrie</p>
             
                 <!-- Lien vers la lightbox avec l'image principale (non scrollable) -->
@@ -503,7 +493,7 @@
             
                
             
-                <a href="portfolio-details.html" title="More Details" class="details-link">
+                <a href="" title="More Details" class="details-link">
                   <i class="bi bi-link-45deg"></i>
                 </a>
 
@@ -524,25 +514,17 @@
             </div>
             
             
-            
-            
-            
-
-           
-            
-
-
-
+   
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
               <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>TMI</h4>
+                <h4>PERLA COSMETIC</h4>
                 <p>Site d'une industrie</p>
                 <!-- Lien vers le contenu personnalisable -->
                 <a href="#scrollable-image" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
                   <i class="bi bi-zoom-in"></i>
                 </a>
-                <a href="portfolio-details.html" title="More Details" class="details-link">
+                <a href="https://www.perla-cosmetic.com/" title="More Details" class="details-link">
                   <i class="bi bi-link-45deg"></i>
                 </a>
               </div>
@@ -554,6 +536,51 @@
               </div>
             </div>
 
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>PERLA COSMETIC</h4>
+                <p>Site d'une industrie</p>
+                <!-- Lien vers le contenu personnalisable -->
+                <a href="#scrollable-image" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="https://www.perla-cosmetic.com/" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+              <!-- Contenu de l'image défilante -->
+              <div id="scrollable-image" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/1.png" alt="Scrollable Image">
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>eyetouch design</h4>
+                <p>site de la boite de design</p>
+                <!-- Lien vers le contenu personnalisable -->
+                <a href="#scrollable-image" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="https://www.eyetouch-design.com/" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+              <!-- Contenu de l'image défilante -->
+              <div id="scrollable-image" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/1.png" alt="Scrollable Image">
+                </div>
+              </div>
+            </div>
+            
     
 
           
@@ -718,118 +745,126 @@
 
     </section><!-- /Faq Section -->
 
+
+    <div class="container section-title" style="padding-bottom: 0px !important;" data-aos="fade-up">
+      <h2 class="text-center" >Collaborateurs</h2>
+    </div>
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section accent-background">
 
       <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
-
+    
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+    
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
               "autoplay": {
-                "delay": 5000
+                "delay": 2000
               },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
+              "slidesPerView": "auto"
             }
-          </script>
+            </script>
           <div class="swiper-wrapper">
-
+    
+            <!-- Groupe 1 -->
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="testimonial-item">
+                    <img src="assets/img/collaborateurs/eyetouch.png" class="" alt="">
+                  </div>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+               
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+    
+            <!-- Groupe 2 -->
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="testimonial-item">
+                    <img src="assets/img/collaborateurs/xtensus.jfif" class="" alt="">
+                  </div>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                
+                <!-- Ajoutez le reste ici -->
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
+            <!-- Groupe 2 -->
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="testimonial-item">
+                    <img src="assets/img/collaborateurs/cipi-actia.jpg" class="" alt="">
+                  </div>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <!-- Ajoutez le reste ici -->
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+             <!-- Groupe 2 -->
+             <div class="swiper-slide">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="testimonial-item">
+                    <img src="assets/img/collaborateurs/map-events.png" class="" alt="">
+                  </div>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <!-- Ajoutez le reste ici -->
               </div>
-            </div><!-- End testimonial item -->
+            </div>
+            
+            <!-- Groupe 2 -->
+            <div class="swiper-slide">
+             <div class="row">
+               <div class="col-lg-12">
+                 <div class="testimonial-item">
+                   <img src="assets/img/collaborateurs/atsc.png" class="" alt="">
+                 </div>
+               </div>
+               <!-- Ajoutez le reste ici -->
+             </div>
+           </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+
+             <!-- Groupe 2 -->
+             <div class="swiper-slide">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="testimonial-item">
+                    <img src="assets/img/collaborateurs/tmi.png" class="" alt="">
+                  </div>
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                <!-- Ajoutez le reste ici -->
               </div>
-            </div><!-- End testimonial item -->
+            </div>
+
+            <!-- Groupe 2 -->
+            <div class="swiper-slide">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="testimonial-item">
+                    <img src="assets/img/collaborateurs/perla.png" class="" alt="">
+                  </div>
+                </div>
+                <!-- Ajoutez le reste ici -->
+              </div>
+            </div>
+
+
 
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
+    
       </div>
+    
+    </section>
 
-    </section><!-- /Testimonials Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
