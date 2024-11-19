@@ -129,6 +129,24 @@
 
 
 
+/* Style pour les messages */
+.loading, .error-message, .sent-message {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.loading {
+  color: blue;
+}
+
+.error-message {
+  color: red;
+}
+
+.sent-message {
+  color: green;
+}
 
 
   </style>
@@ -892,35 +910,87 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+        <form name="contact" method="POST" data-netlify="true" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
           <div class="row gy-4">
-
+        
             <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="" />
             </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+        
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="" />
             </div>
-
+        
             <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="" />
             </div>
-
+        
             <div class="col-md-12">
               <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
             </div>
-
+        
             <div class="col-md-12 text-center">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
-
+        
               <button type="submit">Send Message</button>
             </div>
-
+        
           </div>
-        </form><!-- End Contact Form -->
+        </form>
+
+        <script>
+          // Sélectionner le formulaire
+          const form = document.getElementById("contact-form");
+          const submitButton = document.getElementById("submit");
+          const loadingMessage = document.querySelector(".loading");
+          const errorMessage = document.querySelector(".error-message");
+          const sentMessage = document.querySelector(".sent-message");
+        
+          // Lors de la soumission du formulaire
+          form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche l'envoi normal du formulaire
+        
+            // Afficher le message de chargement
+            loadingMessage.style.display = "block";
+        
+            // Masquer les messages précédents
+            errorMessage.style.display = "none";
+            sentMessage.style.display = "none";
+        
+            // Créer un objet FormData pour collecter les données du formulaire
+            const formData = new FormData(form);
+        
+            // Envoi des données via fetch API à Netlify
+            fetch("/", {
+              method: "POST",
+              headers: {
+                "Accept": "application/json",
+              },
+              body: formData,
+            })
+            .then((response) => {
+              // Vérifier si la réponse est positive
+              if (response.ok) {
+                sentMessage.style.display = "block"; // Afficher le message de succès
+              } else {
+                throw new Error("Une erreur est survenue lors de l'envoi.");
+              }
+            })
+            .catch((error) => {
+              // En cas d'erreur, afficher un message d'erreur
+              errorMessage.textContent = error.message || "Une erreur est survenue.";
+              errorMessage.style.display = "block";
+            })
+            .finally(() => {
+              // Masquer le message de chargement
+              loadingMessage.style.display = "none";
+            });
+          });
+        </script>
+        
+        
 
       </div>
 
