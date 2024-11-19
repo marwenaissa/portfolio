@@ -73,6 +73,64 @@
 }
 
 
+/* Section Testimonials */
+.testimonials {
+  position: relative;
+  padding: 50px 0;
+  overflow: hidden;
+  background-color: #ffffff; /* Arrière-plan pour s'assurer que rien n'est visible en dessous */
+}
+
+/* Background Image */
+.testimonials-bg {
+  background-color: red !important; /* Change la couleur de fond en rouge */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/img/testimonials-bg.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 0; /* Derrière tout */
+  opacity: 1; /* Légère transparence */
+}
+
+/* Container pour garder le contenu visible */
+.testimonials .container {
+  position: relative;
+  z-index: 0.1; /* Devant le background */
+}
+
+/* Swiper Slide */
+.testimonials .swiper-slide {
+  display: flex; /* Active le flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  padding: 20px; /* Espace autour des images */
+  height: 200px; /* Définit une hauteur fixe pour chaque slide */
+}
+
+/* Images des logos */
+.testimonials img {
+  max-width: 150px; /* Taille maximum des logos */
+  max-height: 100%; /* Empêche que les images dépassent le conteneur */
+  height: auto; /* Garde les proportions des images */
+  object-fit: contain; /* Pas de déformation */
+  border-radius: 5px; /* Ajoute un léger arrondi pour le style */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol sur les logos */
+.testimonials img:hover {
+  transform: scale(1.1); /* Zoom léger */
+  box-shadow: 0 6p
+}
+
+
+
+
+
   </style>
   
 
@@ -750,120 +808,51 @@
       <h2 class="text-center" >Collaborateurs</h2>
     </div>
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section accent-background">
-
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+    <section id="testimonials" class="testimonials section">
+      <!-- Background Image -->
+      <div class="testimonials-bg"></div>
     
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-    
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 2000
-              },
-              "slidesPerView": "auto"
-            }
-            </script>
+        <div class="swiper testimonials-swiper">
           <div class="swiper-wrapper">
-    
-            <!-- Groupe 1 -->
+            <!-- Slide 1 -->
             <div class="swiper-slide">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="testimonial-item">
-                    <img src="assets/img/collaborateurs/eyetouch.png" class="" alt="">
-                  </div>
-                </div>
-               
-              </div>
+              <img src="assets/img/collaborateurs/eyetouch.png" alt="Eyetouch">
             </div>
-    
-            <!-- Groupe 2 -->
+            <!-- Slide 2 -->
             <div class="swiper-slide">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="testimonial-item">
-                    <img src="assets/img/collaborateurs/xtensus.jfif" class="" alt="">
-                  </div>
-                </div>
-                
-                <!-- Ajoutez le reste ici -->
-              </div>
+              <img src="assets/img/collaborateurs/xtensus.jfif" alt="Xtensus">
             </div>
-
-            <!-- Groupe 2 -->
+            <!-- Slide 3 -->
             <div class="swiper-slide">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="testimonial-item">
-                    <img src="assets/img/collaborateurs/cipi-actia.jpg" class="" alt="">
-                  </div>
-                </div>
-                <!-- Ajoutez le reste ici -->
-              </div>
+              <img src="assets/img/collaborateurs/cipi-actia.jpg" alt="CIPI Actia">
             </div>
-
-             <!-- Groupe 2 -->
-             <div class="swiper-slide">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="testimonial-item">
-                    <img src="assets/img/collaborateurs/map-events.png" class="" alt="">
-                  </div>
-                </div>
-                <!-- Ajoutez le reste ici -->
-              </div>
-            </div>
-            
-            <!-- Groupe 2 -->
+            <!-- Slide 4 -->
             <div class="swiper-slide">
-             <div class="row">
-               <div class="col-lg-12">
-                 <div class="testimonial-item">
-                   <img src="assets/img/collaborateurs/atsc.png" class="" alt="">
-                 </div>
-               </div>
-               <!-- Ajoutez le reste ici -->
-             </div>
-           </div>
-
-
-             <!-- Groupe 2 -->
-             <div class="swiper-slide">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="testimonial-item">
-                    <img src="assets/img/collaborateurs/tmi.png" class="" alt="">
-                  </div>
-                </div>
-                <!-- Ajoutez le reste ici -->
-              </div>
+              <img src="assets/img/collaborateurs/map-events.png" alt="Map Events">
             </div>
-
-            <!-- Groupe 2 -->
+            <!-- Slide 5 -->
             <div class="swiper-slide">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="testimonial-item">
-                    <img src="assets/img/collaborateurs/perla.png" class="" alt="">
-                  </div>
-                </div>
-                <!-- Ajoutez le reste ici -->
-              </div>
+              <img src="assets/img/collaborateurs/atsc.png" alt="ATSC">
             </div>
-
-
-
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/tmi.png" alt="TMI">
+            </div>
+            <!-- Slide 7 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/perla.png" alt="Perla">
+            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
-    
       </div>
-    
     </section>
+    
+    
+    
+    
+    
 
 
     <!-- Contact Section -->
@@ -947,6 +936,30 @@
 
     </section><!-- /Contact Section -->
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".testimonials-swiper", {
+          loop: true,
+          speed: 800,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 3,
+          spaceBetween: 30,
+          breakpoints: {
+            640: { slidesPerView: 1, spaceBetween: 10 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      });
+    </script>
+    
   </main>
 
   <footer id="footer" class="footer accent-background">
