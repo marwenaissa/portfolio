@@ -1,0 +1,8 @@
+[build]
+  publish = "dist" # Adjust this to your output folder
+  command = "npm run build" # Your build command
+
+[[redirects]]
+  from = "/"
+  to = "/thank-you.html" # The page shown after form submission
+  status = 200
