@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Marwen aissa - Portfolio</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/ma.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+  <style>
+    .swiper-pagination {
+  display: none !important;
+}
+
+.scrollable-image-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Active le défilement vertical */
+  overflow-x: hidden; /* Désactive le défilement horizontal */
+  border: 1px solid #ccc; /* Optionnel : ajoute une bordure */
+}
+
+/* Assurez-vous que les images s'adaptent correctement */
+.scrollable-image-container img {
+  display: block;
+  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur */
+}
+
+/* Personnalisation de la scrollbar pour WebKit */
+.scrollable-image-container::-webkit-scrollbar {
+  width: 18px; /* Largeur de la scrollbar */
+}
+
+.scrollable-image-container::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Couleur du fond de la scrollbar */
+}
+
+.scrollable-image-container::-webkit-scrollbar-thumb {
+  background: #666; /* Couleur de la barre de défilement */
+  border-radius: 10px; /* Arrondit les coins */
+  border: 4px solid #e0e0e0; /* Ajoute une bordure autour de la barre pour qu'elle soit mieux définie */
+}
+
+.scrollable-image-container::-webkit-scrollbar-thumb:hover {
+  background: #444; /* Couleur de la barre de défilement au survol */
+}
+
+/* Pour Firefox et navigateurs supportant les scrollbars standards */
+.scrollable-image-container {
+  scrollbar-width: thick; /* Large scrollbar */
+  scrollbar-color: #666 #e0e0e0; /* Couleurs de la barre et du fond */
+}
+
+
+/* Section Testimonials */
+.testimonials {
+  position: relative;
+  padding: 50px 0;
+  overflow: hidden;
+  background-color: #ffffff; /* Arrière-plan pour s'assurer que rien n'est visible en dessous */
+}
+
+/* Background Image */
+.testimonials-bg {
+  background-color: red !important; /* Change la couleur de fond en rouge */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/img/testimonials-bg.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 0; /* Derrière tout */
+  opacity: 1; /* Légère transparence */
+}
+
+/* Container pour garder le contenu visible */
+.testimonials .container {
+  position: relative;
+  z-index: 0.1; /* Devant le background */
+}
+
+/* Swiper Slide */
+.testimonials .swiper-slide {
+  display: flex; /* Active le flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  padding: 20px; /* Espace autour des images */
+  height: 200px; /* Définit une hauteur fixe pour chaque slide */
+}
+
+/* Images des logos */
+.testimonials img {
+  max-width: 150px; /* Taille maximum des logos */
+  max-height: 100%; /* Empêche que les images dépassent le conteneur */
+  height: auto; /* Garde les proportions des images */
+  object-fit: contain; /* Pas de déformation */
+  border-radius: 5px; /* Ajoute un léger arrondi pour le style */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol sur les logos */
+.testimonials img:hover {
+  transform: scale(1.1); /* Zoom léger */
+  box-shadow: 0 6p
+}
+
+
+
+/* Style pour les messages */
+.loading, .error-message, .sent-message {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.loading {
+  color: blue;
+}
+
+.error-message {
+  color: red;
+}
+
+.sent-message {
+  color: green;
+}
+
+
+  </style>
+  
+
+  
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt="">  -->
+        <h1 class="sitename" >Marwen Aissa</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/1.jpg" alt="" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>I am Marwen aissa</h2>
+        <p><span class="typed" data-typed-items="Developer, Freelancer"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img src="assets/img/profile-img2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-7 about-info">
+                <p><strong>Name: </strong> <span>Marwen Aissa</span></p>
+                <p><strong>Profile: </strong> <span>full stack developer</span></p>
+                <p><strong>Email: </strong> <span>marwen3issa@gmail.com</span></p>
+                <p><strong>Phone: </strong> <span>+216 20 68 64 63</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h5>Skills</h5>
+
+              <div class="progress">
+                <span class="skill"><span>SYMFONY</span> <i class="val">80%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>ANGULAR</span> <i class="val">70%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>NODEJS</span> <i class="val">60%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>REACTJS</span> <i class="val">60%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <h4>About me</h4>
+              <p>
+                Je suis Aissa Marwen, un développeur passionné par la création de solutions web innovantes. Avec une expertise en front-end et back-end, j'aime relever des défis techniques et améliorer constamment mes compétences.
+                Mon objectif est de développer des applications fluides et performantes, tout en garantissant une excellente expérience utilisateur. Motivé par l'apprentissage continu, je cherche à collaborer sur des projets stimulants et à apporter des solutions concrètes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>CV</h2>
+        <p>Principaux projets et réalisations professionnelles et éducatives</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Marwen aissa</h4>
+              <p><em>Développeur web innovant et orienté vers les résultats avec plus de 4 ans d'expérience dans la conception et le développement de solutions web centrées sur l'utilisateur, de la phase de conception initiale à la livraison finale.</em></p>
+              <ul>
+                <li>Tunis, Tunisie</li>
+                <li>+216 20 686 463</li>
+                <li>marwen3issa@gmail.com</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            
+           
+
+            <div class="resume-item">
+              <h4>Licence, développement systèmes informatiques</h4>
+              <h5>2010 - 2014</h5>
+              <p><em>ISET Charguia, tunis</em></p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+
+            <div class="resume-item">
+              <h4>CIPI ACTIA, Tunis</h4>
+              <h5>De mars 2021 à mars 2024</h5>
+              <p><em>developpeur symfony</em></p>
+              <ul>
+                <li>Réalisation de suivi de production (administration, rôles, création dynamique de menus, graphes de visualisation).</li>
+                <li>Mise en place d'une application de suivi des rapports d'équipes.</li>
+                <li>Développement d’une application de Traçabilité des consommables dans le processus de production.</li>
+            </ul>
+            </div><!-- Edn Resume Item -->
+
+
+            <div class="resume-item">
+              <h4>Xtensus, tunis</h4>
+              <h5>D'octobre 2020 à mars 2021</h5>
+              <p><em>developpeur symfony</em></p>
+              <ul>
+                <li>Réalisation d’une application de gestion de criminels.</li>
+                <li>Conception d’une application de gestion des documents.</li>
+            </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>eyetouch design</h4>
+              <h5>De décembre 2019 à septembre 2020 </h5>
+              <p><em>developpeur codeigniter</em></p>
+              <ul>
+                <li>Réalisation des applications web et des sites vitrines.</li>
+                <li>Elaboration des cahiers des charges des projets.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mon Engagement professionnel</h2>
+        <p>
+          Mon engagement se traduit par une approche passionnée et déterminée, où je mets mes compétences et mon savoir-faire au service de chaque projet, avec une attention particulière à l'innovation et à la satisfaction du client.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-gem"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Création d'interface élégante et originale</h3>
+              </a>
+              <p>Toujours en quête de l'originalité, je m'efforce de créer des designs visuellement attractifs et mémorables.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-palette"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Créativité et sens artistique</h3>
+              </a>
+              <p>Un goût prononcé pour l’esthétique, alliant design et fonctionnalité pour offrir des solutions uniques et harmonieuses.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Souci du détail</h3>
+              </a>
+              <p>Prendre soin de chaque élément pour garantir un produit final soigné et sans défaut.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Support client réactif et efficace</h3>
+              </a>
+              <p>Fournir une assistance rapide et professionnelle pour résoudre les problèmes des utilisateurs, assurant une expérience sans interruptions et une satisfaction optimale.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Communication efficace et transparente</h3>
+              </a>
+              <p>Maintenir un échange constant pour assurer la bonne marche du projet, avec des retours clairs et constructifs.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Écoute active et empathie</h3>
+              </a>
+              <p>Attentif aux besoins des clients et des équipes pour créer des produits qui répondent aux attentes de chacun.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section accent-background">
+
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="0" class="purecounter">14</span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="22" data-purecounter-duration="0" class="purecounter">22</span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="0" class="purecounter">4</span>
+              <p>Expérience en entreprise</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="0" class="purecounter">4</span>
+              <p>Années d'expérience</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Découvrez mes projets développés dans divers langages, offrant des solutions innovantes et sur mesure, parfaitement adaptées aux besoins spécifiques de mes clients, avec une attention particulière portée à l'ergonomie, au design et à l'expérience utilisateur.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-codeigniter">CODEIGNITER</li>
+            <!-- <li data-filter=".filter-symfony">SYMFONY</li>
+            <li data-filter=".filter-symfony">SYMFONY</li>
+            <li data-filter=".filter-symfony">NODEJS/REACT</li> -->
+            
+            
+            
+            
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+           
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-codeigniter">
+              <!-- Image principale (non scrollable) -->
+              <img src="assets/img/tmi/couverture.png" class="img-fluid" alt="App 1">
+              <div class="portfolio-info">
+                <h4>TMI</h4>
+                <p>Site web pour une industrie</p>
+                
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-1" title="Accueil" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-2" title="Outil-industriel" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                 
+                </a>
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-3" title="Industrialisation" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-4" title="Serrure" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                 
+                </a>
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-5" title="Toleriefine" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-6" title="Presse" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-7" title="Contact" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                </a>
+                <a href="http://www.tmi.tn" title="Visiter" class="details-link" target="_blank">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            
+              
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-1" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/accueil.png" alt="Scrollable Image 1">
+                </div>
+              </div>
+            
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-2" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/outil-industriel.png" alt="Scrollable Image 2">
+                </div>
+              </div>
+
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-3" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/industrialisation.png" alt="Scrollable Image 1">
+                </div>
+              </div>
+            
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-4" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/serrure.png" alt="Scrollable Image 2">
+                </div>
+              </div>
+
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-5" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/toleriefine.png" alt="Scrollable Image 1">
+                </div>
+              </div>
+            
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-6" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/presse.png" alt="Scrollable Image 2">
+                </div>
+              </div>
+
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-7" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/tmi/contact.png" alt="Scrollable Image 2">
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-codeigniter">
+              <!-- Image principale (non scrollable) -->
+              <img src="assets/img/perla/couverture.png" class="img-fluid" alt="App 1">
+              <div class="portfolio-info">
+                <h4>PERLA COSMETIC</h4>
+                <p>Site d'une parfumerie</p>
+               
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-10" title="accueil" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-11" title="homme" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-12" title="femme" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-13" title="parfum-kids" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-14" title="Déo-kids" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+                
+                
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-15" title="Parfum-vrac" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+
+                 <!-- Lien vers la lightbox avec la première image scrollable -->
+                 <a href="#scrollable-image-16" title="Eau-de-cologne" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+               
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-17" title="Contact" data-gallery="portfolio-gallery-product-10" class="glightbox preview-link">
+                </a>
+               
+                <a href="https://www.perla-cosmetic.com" title="Visiter" class="details-link" target="_blank">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+                
+              </div>
+            
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-10" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/accueil.png" alt="Scrollable Image 10">
+                </div>
+              </div>
+              
+              <div id="scrollable-image-11" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/homme.png" alt="Scrollable Image 10">
+                </div>
+              </div>
+
+              <div id="scrollable-image-12" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/femme.png" alt="Scrollable Image 10">
+                </div>
+              </div>
+
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-13" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/parfum-kids.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-14" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/deo-kids.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-15" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/parfum-vrac.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+             
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-16" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/eau-de-cologne.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-17" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/perla/contact.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+            
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-codeigniter">
+              <!-- Image principale (non scrollable) -->
+              <img src="assets/img/atsc/couverture.png" class="img-fluid" alt="App 1">
+              <div class="portfolio-info">
+                <h4>ATSC</h4>
+                <p>Site d'une industrie</p>
+               
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-20" title="Accueil" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-21" title="Process" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                </a>
+
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-22" title="Produit-atsc" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-23" title="Réalisation" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                </a>
+
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-24" title="Parc-machine" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-25" title="Control-qualite" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                </a>
+                
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-26" title="Contact" data-gallery="portfolio-gallery-product-20" class="glightbox preview-link">
+                </a>
+             
+                <a href="" title="Visiter" class="details-link" target="_blank">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+                
+              </div>
+            
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-20" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/accueil.png" alt="Scrollable Image 10">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-21" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/process.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-22" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/produit-atsc.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-23" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/realisation.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-24" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/parc-machine.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-25" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/control-qualite.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-26" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/atsc/contact.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+            
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-codeigniter">
+              <!-- Image principale (non scrollable) -->
+              <img src="assets/img/eyetouch/couverture.png" class="img-fluid" alt="App 1">
+              <div class="portfolio-info">
+                <h4>EYETOUCH DESIGN</h4>
+                <p>Site de la boite du design eyetouch consulting</p>
+               
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-30" title="Accueil" data-gallery="portfolio-gallery-product-30" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-31" title="Expertise" data-gallery="portfolio-gallery-product-30" class="glightbox preview-link">
+                </a>
+
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-32" title="Client" data-gallery="portfolio-gallery-product-30" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-33" title="Contact" data-gallery="portfolio-gallery-product-30" class="glightbox preview-link">
+                </a>
+
+                <a href="https://www.eyetouch-design.com" title="Visiter" class="details-link" target="_blank">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+                
+              </div>
+            
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-30" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/eyetouch/accueil.png" alt="Scrollable Image 10">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-31" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/eyetouch/expertise.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-32" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/eyetouch/clients.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-33" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/eyetouch/contact.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-codeigniter">
+              <!-- Image principale (non scrollable) -->
+              <img src="assets/img/mapevents/couverture2.png" class="img-fluid" alt="App 1">
+              <div class="portfolio-info">
+                <h4>Map events</h4>
+                <p>Site d'une agence de voyage</p>
+               
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-40" title="Accueil" data-gallery="portfolio-gallery-product-40" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+                <a href="#scrollable-image-41" title="Sé  jours-en-tunisie" data-gallery="portfolio-gallery-product-40" class="glightbox preview-link">
+                </a>
+
+                <!-- Lien vers la lightbox avec la première image scrollable -->
+                <a href="#scrollable-image-42" title="Contact" data-gallery="portfolio-gallery-product-40" class="glightbox preview-link">
+                </a>
+                <!-- Lien vers la lightbox avec la deuxième image scrollable -->
+               <!--  <a href="#scrollable-image-43" title="Scrollable Image 14" data-gallery="portfolio-gallery-product-40" class="glightbox preview-link">
+                </a> -->
+
+                <a href="" title="Visiter" class="details-link" target="_blank">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+                
+              </div>
+            
+              <!-- Contenu de la première image défilable -->
+              <div id="scrollable-image-40" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/mapevents/accueil.png" alt="Scrollable Image 10">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-41" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/mapevents/sejoursentunisie.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+
+              <!-- Contenu de la deuxième image défilable -->
+              <div id="scrollable-image-42" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/mapevents/contact.png" alt="Scrollable Image 11">
+                </div>
+              </div>
+              
+              <!-- Contenu de la deuxième image défilable -->
+             <!--  <div id="scrollable-image-43" style="display: none;">
+                <div class="scrollable-image-container">
+                  <img src="assets/img/mapevents/contact6.png" alt="Scrollable Image 14">
+                </div>
+              </div> -->
+            </div>
+            
+            
+           
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Explorez une gamme complète de services de développement web adaptés à vos besoins.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 gx-lg-5">
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Création de Sites Vitrines</h3>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Développement E-commerce</h3>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Applications Web Dynamiques</h3>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Maintenance et Support</h3>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Optimisation SEO</h3>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Intégration API</h3>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Ce Qui Me <strong>Différencie</strong> dans le Milieu du Développement
+              </span></h3>
+              <p>
+                Ce qui me distingue dans le domaine du développement, c'est ma capacité à allier rigueur technique et créativité. Je suis passionné par l'idée de créer des solutions élégantes et efficaces, tout en maintenant une attention particulière aux détails. Mon approche est toujours orientée vers la satisfaction des utilisateurs, en mettant l'accent sur l'optimisation, la performance et l'expérience. Grâce à ma volonté constante d'apprendre et de m'adapter, je suis en mesure d'apporter des réponses innovantes aux défis techniques tout en restant à l'écoute des besoins des clients.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>Gestion de projet efficace</span></h3>
+                <div class="faq-content">
+                  <p>Organisation rigoureuse, avec des objectifs clairs pour garantir la réussite du projet dans les délais impartis.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>Adaptabilité et flexibilité</span></h3>
+                <div class="faq-content">
+                  <p>Capacité à m'ajuster aux changements et à apprendre rapidement de nouvelles technologies pour répondre aux besoins des projets.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>Veille technologique continue </span></h3>
+                <div class="faq-content">
+                  <p>Je me tiens informé des dernières tendances et évolutions du secteur pour rester à la pointe de l’innovation.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>Focus sur la qualité</span></h3>
+                <div class="faq-content">
+                  <p>Je m'engage à fournir des produits de la plus haute qualité, en assurant une exécution soignée et respectueuse des délais.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>Approche centrée utilisateur</span></h3>
+                <div class="faq-content">
+                  <p>Priorité à l'expérience utilisateur, en concevant des interfaces intuitives et performantes.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+
+    <div class="container section-title" style="padding-bottom: 0px !important;" data-aos="fade-up">
+      <h2 class="text-center" >Collaborateurs</h2>
+    </div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <!-- Background Image -->
+      <div class="testimonials-bg"></div>
+    
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper testimonials-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide" >
+              <img src="assets/img/collaborateurs/eyetouch.png"  alt="Eyetouch">
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/xtensus2.jfif" alt="Xtensus">
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/cipi-actia.jpg" alt="CIPI Actia">
+            </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/map-events.png" alt="Map Events">
+            </div>
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/atsc.png" alt="ATSC">
+            </div>
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/tmi.png" alt="TMI">
+            </div>
+            <!-- Slide 7 -->
+            <div class="swiper-slide">
+              <img src="assets/img/collaborateurs/perla.png" alt="Perla">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Si vous avez des questions ou souhaitez obtenir plus d'informations, n'hésitez pas à nous contacter. Vous pouvez me joindre par email, téléphone</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Tunis</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+216 20 68 64 63</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p>marwen3issa@gmail.com</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form name="contact" method="POST" action="/" data-netlify="true" id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
+        
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+            </div>
+        
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+            </div>
+        
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required />
+            </div>
+        
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required></textarea>
+            </div>
+        
+            <div class="col-md-12 text-center">
+              <div class="loading" style="display:none;">Loading...</div>
+              <div class="error-message" style="display:none;"></div>
+              <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
+        
+              <button type="submit" id="submit">Send Message</button>
+            </div>
+        
+          </div>
+        </form>
+        
+
+        <script>
+          // Select the form
+          const form = document.getElementById("contact-form");
+        
+          form.addEventListener("submit", function (event) {
+            const loadingMessage = document.querySelector(".loading");
+            const sentMessage = document.querySelector(".sent-message");
+            const errorMessage = document.querySelector(".error-message");
+        
+            // Show loading state
+            loadingMessage.style.display = "block";
+            sentMessage.style.display = "none";
+            errorMessage.style.display = "none";
+        
+            // Let Netlify handle the submission
+            setTimeout(() => {
+              loadingMessage.style.display = "none";
+              sentMessage.style.display = "block";
+            }, 2000); // Simulate processing time
+          });
+        </script>
+        
+        
+        
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".testimonials-swiper", {
+          loop: true,
+          speed: 800,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 3,
+          spaceBetween: 30,
+          breakpoints: {
+            640: { slidesPerView: 1, spaceBetween: 10 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      });
+    </script>
+    
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Marwen Aissa</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+      <!--   <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a> -->
+        <a href="https://www.linkedin.com/in/marwen-aissa-3086a6161/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <!-- <div class="credits"> -->
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      <!--   Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div> -->
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
